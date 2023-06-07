@@ -1,4 +1,4 @@
-package cn.lyrics.getter.api
+package cn.lyrics.getter.api.tools
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -7,6 +7,7 @@ import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import android.os.Build
 import android.util.Base64
+import cn.lyrics.getter.api.LyricReceiver
 import cn.lyrics.getter.api.data.LyricData
 import java.io.ByteArrayOutputStream
 
@@ -15,19 +16,6 @@ object EventTools {
         return false
     }
 
-    /**
-     * 可拉以base64
-     *
-     * @param drawable 图片
-     * @return [String] 返回图片的Base64
-     */
-    fun drawableToBase64(drawable: BitmapDrawable): String {
-        val bitmap = drawable.bitmap
-        val stream = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
-        val bytes = stream.toByteArray()
-        return Base64.encodeToString(bytes, Base64.DEFAULT)
-    }
 
     /**
      * 发送歌词
