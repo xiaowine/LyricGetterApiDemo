@@ -1,7 +1,7 @@
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-    alias(libs.plugins.androidLibrary)
-    alias(libs.plugins.kotlinAndroid)
+    id("com.android.application")
+    id("kotlin-android")
 }
 
 android {
@@ -11,7 +11,6 @@ android {
     defaultConfig {
         minSdk = 26
 
-        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
