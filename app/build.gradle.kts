@@ -31,7 +31,7 @@ android {
         jvmTarget = "11"
     }
 }
-
 dependencies {
-    implementation(project(mapOf("path" to ":GetterAPI")))
+    implementation(project(mapOf("path" to ":API")))
 }
+

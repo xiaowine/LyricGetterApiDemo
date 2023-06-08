@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "GetterApi"
 include(":app")
-include(":GetterAPI")
+include(":API")
