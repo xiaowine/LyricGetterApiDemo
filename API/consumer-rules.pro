@@ -1,1 +1,0 @@
--keep class cn.lyrics.getter.api.* {*;}
