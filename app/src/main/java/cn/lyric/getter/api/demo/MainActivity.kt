@@ -1,4 +1,4 @@
-package cn.lyrics.getter.api.demo
+package cn.lyric.getter.api.demo
 
 
 import android.annotation.SuppressLint
@@ -6,9 +6,9 @@ import android.app.Activity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import cn.lyrics.getter.api.data.DataType
-import cn.lyrics.getter.api.tools.EventTools.receptionLyric
-import cn.lyrics.getter.api.tools.Tools.base64ToDrawable
+import cn.lyric.getter.api.data.DataType
+import cn.lyric.getter.api.tools.EventTools.receptionLyric
+import cn.lyric.getter.api.tools.Tools.base64ToDrawable
 
 class MainActivity : Activity() {
     @SuppressLint("SetTextI18n")

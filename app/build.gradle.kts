@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "cn.lyrics.getter.api.demo"
+    namespace = "cn.lyric.getter.api.demo"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "cn.lyrics.getter.api.demo"
+        applicationId = "cn.lyric.getter.api.demo"
         minSdk = 26
         targetSdk = 33
         versionCode = 1
