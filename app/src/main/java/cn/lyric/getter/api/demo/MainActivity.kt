@@ -4,12 +4,15 @@ package cn.lyric.getter.api.demo
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import cn.lyric.getter.api.data.DataType
 import cn.lyric.getter.api.tools.EventTools
 import cn.lyric.getter.api.tools.Tools
+import cn.lyric.getter.api.tools.Tools.drawableToBase64
+
 
 class MainActivity : Activity() {
     @SuppressLint("SetTextI18n")
@@ -19,6 +22,12 @@ class MainActivity : Activity() {
         findViewById<TextView>(R.id.activation).text = "激活状态：${EventTools.hasEnable()}"
         findViewById<Button>(R.id.send).setOnClickListener {
             EventTools.sendLyric(applicationContext, "${(0..1000).random()}${getString(R.string.app_name)}", applicationContext.packageName)
+        }
+        findViewById<Button>(R.id.send2).setOnClickListener {
+            EventTools.sendLyric(applicationContext, "${(0..1000).random()}${getString(R.string.app_name)}", true, drawableToBase64(getDrawable(R.drawable.ic_launcher_foreground)!!), false, "", applicationContext.packageName)
+        }
+        findViewById<Button>(R.id.send3).setOnClickListener {
+            EventTools.sendLyric(applicationContext, "${(0..1000).random()}${getString(R.string.app_name)}", true, drawableToBase64(getDrawable(R.mipmap.ic_launcher)!!), false, "", applicationContext.packageName)
         }
         findViewById<Button>(R.id.clean).setOnClickListener {
             EventTools.stopLyric(applicationContext)
@@ -35,6 +44,8 @@ class MainActivity : Activity() {
             findViewById<TextView>(R.id.toString).text = "toString：$it"
             if (it.customIcon) {
                 findViewById<ImageView>(R.id.icon).setImageBitmap(Tools.base64ToDrawable(it.base64Icon))
+            } else {
+                findViewById<ImageView>(R.id.icon).setImageBitmap(null)
             }
 
         }
